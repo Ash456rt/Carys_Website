@@ -1,6 +1,11 @@
 # CAYRYS Haute Botanique & Cellular Radiance
 ### Awwwards-Caliber Luxury Beauty & Bio-Cellular Skincare Website
 
+[![Live Preview](https://img.shields.io/badge/LIVE%20PREVIEW-Visit%20Website-B6925A?style=for-the-badge&logo=githubpages&logoColor=white)](https://ash456rt.github.io/Carys_Website/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?style=flat-square&logo=github)](https://ash456rt.github.io/Carys_Website/)
+
+> **Live Preview:** [**https://ash456rt.github.io/Carys_Website/**](https://ash456rt.github.io/Carys_Website/)
+
 An ultra-luxury e-commerce and brand experience crafted for **CAYRYS**, incorporating world-class design principles inspired by Awwwards-winning beauty platforms (*Typology Paris, Aesop, Rhode, Augustinus Bader, and Dior Prestige*).
 
 ---
