@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAYRYS Haute Botanique &amp; Cellular Radiance | Luxury Skincare &amp; Parfumerie</title>
+  <meta name="description" content="Maison CAYRYS converges Swiss alpine botanical harvests with patented bio-cellular longevity science. Experience transformative, clinical-grade skincare and artisanal haute parfumerie." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Magnetic Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Announcement Ticker -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <div class="announcement-ticker">
+      <div class="announcement-item">
+        <span>Complimentary White-Glove Global Shipping on orders over $150</span>
+        <span class="dot"></span>
+      </div>
+      <div class="announcement-item">
+        <span>Receive a Deluxe Damask Rose Nectar Miniature (5ml) with every order</span>
+        <span class="dot"></span>
+      </div>
+      <div class="announcement-item">
+        <span>Formulated in Grasse, France &amp; Geneva, Switzerland • 100% Bio-Active</span>
+        <span class="dot"></span>
+      </div>
+      <div class="announcement-item">
+        <span>Use invitation code <strong>LUXE15</strong> for 15% off your first ritual</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <!-- Mobile Menu Toggle Button -->
+      <button class="icon-btn mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Toggle Mobile Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <!-- Left Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#collections" class="nav-link">Collections</a></li>
+          <li><a href="#diagnostic" class="nav-link">Ritual Finder</a></li>
+          <li><a href="#routine" class="nav-link">AM / PM Protocols</a></li>
+          <li><a href="#science" class="nav-link">Cellular Science</a></li>
+          <li><a href="#efficacy" class="nav-link">Clinical Proof</a></li>
+          <li><a href="#reviews" class="nav-link">Client Voices</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center Brand Logo -->
+      <a href="#" class="brand-wrapper" aria-label="CAYRYS Maison Homepage">
+        <img src="assets/crest-transparent.png" alt="CAYRYS Monogram" class="brand-crest-img" />
+        <img src="assets/wordmark-transparent.png" alt="CAYRYS" class="brand-wordmark-img" />
+      </a>
+
+      <!-- Right Utility Actions -->
+      <div class="nav-actions">
+        <!-- Currency Selector -->
+        <select class="currency-select" id="currency-dropdown" onchange="handleCurrencyChange(this.value)" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+
+        <!-- VIP Member Account Trigger -->
+        <button class="icon-btn" onclick="openMemberModal()" title="Maison VIP Account" aria-label="Open VIP Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+
+        <!-- Dark / Light Theme Mode Switcher -->
+        <button class="icon-btn" onclick="toggleTheme()" title="Toggle Obsidian Twilight Salon" aria-label="Toggle Twilight Mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-toggle-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Sensory Audio Sound Toggle -->
+        <button class="icon-btn audio-toggle-btn" onclick="toggleSensoryAudio()" title="Toggle Sensory Soundscapes" aria-label="Toggle Sensory Audio">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Search Trigger -->
+        <button class="icon-btn" onclick="openSearchModal()" title="Search Formulations" aria-label="Open Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Trigger -->
+        <button class="icon-btn" onclick="showToast('Your saved formulas: ' + AppState.wishlist.length + ' item(s)')" title="Saved Wishlist" aria-label="View Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count wishlist-count-badge" style="display:none;">0</span>
+        </button>
+
+        <!-- Cart / Bag Trigger -->
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag" aria-label="Open Cart Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 01-8 0"></path>
+          </svg>
+          <span class="badge-count cart-count-badge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <img src="assets/crest-transparent.png" alt="CAYRYS" style="height:40px;" />
+      <button class="icon-btn" onclick="toggleMobileNav()" aria-label="Close Mobile Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#collections" class="mobile-nav-link" onclick="toggleMobileNav()">Collections</a></li>
+      <li><a href="#diagnostic" class="mobile-nav-link" onclick="toggleMobileNav()">Ritual Finder</a></li>
+      <li><a href="#routine" class="mobile-nav-link" onclick="toggleMobileNav()">AM/PM Protocols</a></li>
+      <li><a href="#science" class="mobile-nav-link" onclick="toggleMobileNav()">Cellular Science</a></li>
+      <li><a href="#efficacy" class="mobile-nav-link" onclick="toggleMobileNav()">Clinical Proof</a></li>
+      <li><a href="#reviews" class="mobile-nav-link" onclick="toggleMobileNav()">Client Voices</a></li>
+      <li><a href="#journal" class="mobile-nav-link" onclick="toggleMobileNav()">The Gazette</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          <span class="tracking-widest-luxury">L’Alchimie de la Terre et de la Cellule</span>
+        </div>
+
+        <h1 class="heading-display hero-title">
+          Where Rare Alpine Floras Meet <span class="italic-flair">Cellular Longevity</span>
+        </h1>
+
+        <p class="hero-description">
+          Maison CAYRYS harnesses cryo-extracted botanical stem cells from 3,000-meter Swiss peaks, colloidal 24K bio-gold peptides, and dawn-harvested Grasse roses to awaken infinite cellular radiance.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#collections" class="btn-primary">
+            <span>Explore Formulations</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#diagnostic" class="btn-secondary">
+            <span>Skin Diagnostic Quiz</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Bio-Active Purity</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-value">-40°C</span>
+            <span class="hero-stat-label">Cryo-Stem Extraction</span>
+          </div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-value">98.4%</span>
+            <span class="hero-stat-label">Firming Efficacy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Art Frame -->
+      <div class="hero-visual-stage">
+        <div class="hero-visual-frame">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=90" alt="CAYRYS L’Élixir Cellulaire Doré" class="hero-visual-img" />
+        </div>
+
+        <!-- Floating Badge: Award Winner -->
+        <div class="floating-glass-card top-right">
+          <div class="award-badge-pill">
+            <div class="award-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <div class="award-text-content">
+              <h4>Prix de Beauté 2026</h4>
+              <p>Best Bio-Cellular Breakthrough</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Badge: Swiss Formulation -->
+        <div class="floating-glass-card bottom-left">
+          <div class="award-badge-pill">
+            <div class="award-icon-circle" style="background:var(--color-rose-mist);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <div class="award-text-content">
+              <h4>Grasse &amp; Genève</h4>
+              <p>Triple-Blind Clinically Proven</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Skin Diagnostic Quiz Section -->
+  <section class="section-padding quiz-section" id="diagnostic">
+    <div class="container container-narrow">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Personalized Skin Assessment</span>
+        <h2 class="section-title">The CAYRYS Cellular Diagnostic</h2>
+        <p class="section-lead">
+          Every epidermis is an intricate living ecosystem. Answer three bespoke questions to allow our diagnostic algorithm to architect your custom bio-cellular protocol.
+        </p>
+      </div>
+
+      <div class="quiz-card">
+        <!-- Progress Bar -->
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+
+        <!-- Question Step 1 -->
+        <div class="quiz-step-panel" id="quiz-step-1">
+          <div class="quiz-header-meta">
+            <span class="step-indicator">Step 01 of 03</span>
+            <span style="font-size:0.75rem; color:var(--color-muted);">Skin Constitution</span>
+          </div>
+          <h3 class="quiz-question-title">How does your skin feel in the hours after morning cleansing?</h3>
+          <p class="quiz-question-subtitle">Select the constitutional state that best reflects your current condition.</p>
+
+          <div class="quiz-options-grid">
+            <div class="quiz-option-card" data-value="dry" onclick="QuizEngine.selectOption(1, 'skinType', this)">
+              <div class="quiz-option-title">Tight &amp; Lipid-Depleted</div>
+              <div class="quiz-option-desc">Feels dry, lacks bounce, craves rich nourishing textures and lipid renewal.</div>
+            </div>
+            <div class="quiz-option-card" data-value="sensitive" onclick="QuizEngine.selectOption(1, 'skinType', this)">
+              <div class="quiz-option-title">Reactive &amp; Sensitized</div>
+              <div class="quiz-option-desc">Prone to redness, burning, windburn, or compromised barrier irritation.</div>
+            </div>
+            <div class="quiz-option-card" data-value="combo" onclick="QuizEngine.selectOption(1, 'skinType', this)">
+              <div class="quiz-option-title">Combination &amp; T-Zone Glow</div>
+              <div class="quiz-option-desc">Occasional excess sebum in forehead and nose, normal to dehydrated cheeks.</div>
+            </div>
+            <div class="quiz-option-card" data-value="mature" onclick="QuizEngine.selectOption(1, 'skinType', this)">
+              <div class="quiz-option-title">Diminished Firmness &amp; Density</div>
+              <div class="quiz-option-desc">Noticing micro-grooves, loss of cheek volume, and slower cellular recovery.</div>
+            </div>
+          </div>
+
+          <div class="quiz-nav-row">
+            <div></div>
+            <button class="btn-primary" id="quiz-next-btn-1" onclick="QuizEngine.nextStep(1)">
+              Continue to Step 02
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Step 2 -->
+        <div class="quiz-step-panel" id="quiz-step-2" style="display:none;">
+          <div class="quiz-header-meta">
+            <span class="step-indicator">Step 02 of 03</span>
+            <span style="font-size:0.75rem; color:var(--color-muted);">Transformative Ambition</span>
+          </div>
+          <h3 class="quiz-question-title">What is your paramount skin ambition over the next 28 days?</h3>
+          <p class="quiz-question-subtitle">Select your primary transformation objective.</p>
+
+          <div class="quiz-options-grid">
+            <div class="quiz-option-card" data-value="radiance" onclick="QuizEngine.selectOption(2, 'ambition', this)">
+              <div class="quiz-option-title">Glass-Skin Luminous Radiance</div>
+              <div class="quiz-option-desc">Revitalize dullness, awaken translucent alpine glow, and restore vitality.</div>
+            </div>
+            <div class="quiz-option-card" data-value="barrier" onclick="QuizEngine.selectOption(2, 'ambition', this)">
+              <div class="quiz-option-title">Intensive Barrier Restoration</div>
+              <div class="quiz-option-desc">Soothe inflammation, halt lipid peroxidation, and fortify natural defenses.</div>
+            </div>
+            <div class="quiz-option-card" data-value="sculpt" onclick="QuizEngine.selectOption(2, 'ambition', this)">
+              <div class="quiz-option-title">Deep Cellular Sculpt &amp; Lift</div>
+              <div class="quiz-option-desc">Amplify elastin synthesis, firm facial contours, and soften fine expression lines.</div>
+            </div>
+            <div class="quiz-option-card" data-value="hydration" onclick="QuizEngine.selectOption(2, 'ambition', this)">
+              <div class="quiz-option-title">Deep Multilevel Quench &amp; Plump</div>
+              <div class="quiz-option-desc">Infuse deep dermal layers with oligomer hyaluronate and botanical hydrosols.</div>
+            </div>
+          </div>
+
+          <div class="quiz-nav-row">
+            <button class="btn-secondary" onclick="QuizEngine.prevStep(2)">Back</button>
+            <button class="btn-primary" id="quiz-next-btn-2" onclick="QuizEngine.nextStep(2)">
+              Continue to Step 03
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Step 3 -->
+        <div class="quiz-step-panel" id="quiz-step-3" style="display:none;">
+          <div class="quiz-header-meta">
+            <span class="step-indicator">Step 03 of 03</span>
+            <span style="font-size:0.75rem; color:var(--color-muted);">Ritual Cadence</span>
+          </div>
+          <h3 class="quiz-question-title">What ritual cadence best harmonizes with your day?</h3>
+          <p class="quiz-question-subtitle">We tailor formulations to fit your daily sanctuary time.</p>
+
+          <div class="quiz-options-grid">
+            <div class="quiz-option-card" data-value="minimal" onclick="QuizEngine.selectOption(3, 'cadence', this)">
+              <div class="quiz-option-title">Minimalist 2-Step Protocol</div>
+              <div class="quiz-option-desc">High-potency multi-tasking serum followed by a protective barrier crème.</div>
+            </div>
+            <div class="quiz-option-card" data-value="haute" onclick="QuizEngine.selectOption(3, 'cadence', this)">
+              <div class="quiz-option-title">The Complete Haute Maison Ritual</div>
+              <div class="quiz-option-desc">Full 4-step sensory layering: Mist, Active Serum, Crème, and Nocturnal Nectar.</div>
+            </div>
+            <div class="quiz-option-card" data-value="nocturne" onclick="QuizEngine.selectOption(3, 'cadence', this)">
+              <div class="quiz-option-title">Nighttime Cellular Intensive</div>
+              <div class="quiz-option-desc">Prioritizing deep overnight circadian recovery and lymphatic drainage.</div>
+            </div>
+            <div class="quiz-option-card" data-value="sensory" onclick="QuizEngine.selectOption(3, 'cadence', this)">
+              <div class="quiz-option-title">Aroma-Botanical Wellness Sanctuary</div>
+              <div class="quiz-option-desc">Sensory massage elixirs infused with therapeutic Grasse floral absolutes.</div>
+            </div>
+          </div>
+
+          <div class="quiz-nav-row">
+            <button class="btn-secondary" onclick="QuizEngine.prevStep(3)">Back</button>
+            <button class="btn-gold btn-primary" onclick="QuizEngine.calculateResults()">
+              Reveal My Bespoke Protocol
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Panel -->
+        <div class="quiz-result-panel" id="quiz-result-panel">
+          <div class="quiz-result-layout">
+            <div class="quiz-result-image">
+              <img id="regimen-img-val" src="" alt="Recommended Regimen" />
+            </div>
+
+            <div class="quiz-result-info">
+              <div class="match-score-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span id="regimen-affinity-val">99.4% Match</span>
+              </div>
+              <h3 class="regimen-title" id="regimen-title-val">The Royal Cellular Longevity Ritual</h3>
+              <p class="regimen-summary" id="regimen-summary-val"></p>
+
+              <div class="regimen-bundle-items">
+                <div class="regimen-bundle-item">
+                  <span><strong>Included:</strong> Flagship Bio-Cellular Serum + Barrier Crème</span>
+                  <span style="color:var(--color-sage); font-weight:600;">Complimentary 10% Bundle Savings</span>
+                </div>
+                <div class="regimen-bundle-item">
+                  <span>Total Regimen Investment:</span>
+                  <div>
+                    <span id="regimen-bundle-price" style="font-size:1.15rem; font-weight:700; color:var(--color-obsidian);"></span>
+                    <span id="regimen-original-price" style="text-decoration:line-through; font-size:0.85rem; color:var(--color-muted); margin-left:6px;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <button class="btn-primary" id="btn-add-quiz-bundle">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                  Add Complete Regimen to Bag
+                </button>
+                <button class="btn-secondary" onclick="QuizEngine.restart()">
+                  Retake Assessment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AM / PM Routine Builder Section -->
+  <section class="section-padding routine-section" id="routine">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">The Maison Chronobiology</span>
+        <h2 class="section-title">AM / PM Bio-Cellular Protocols</h2>
+        <p class="section-lead">
+          Skin behavior shifts dramatically between solar exposure and nocturnal mitosis. Explore our step-by-step synchronized daily rituals.
+        </p>
+      </div>
+
+      <!-- Routine Switcher Controls -->
+      <div class="routine-tab-controls">
+        <button class="routine-tab-btn active" id="btn-routine-am" onclick="switchRoutineMode('am')">
+          <span>☀️ Aura du Matin (Morning Shield)</span>
+        </button>
+        <button class="routine-tab-btn" id="btn-routine-pm" onclick="switchRoutineMode('pm')">
+          <span>🌙 Repos Nocturne (Nocturnal Rebirth)</span>
+        </button>
+      </div>
+
+      <!-- Steps Grid Container -->
+      <div class="routine-timeline-grid" id="routine-steps-grid">
+        <!-- Dynamically populated by app.js -->
+      </div>
+
+      <!-- Bundle Callout Banner -->
+      <div class="routine-bundle-cta-box">
+        <div>
+          <span class="tracking-widest-luxury" style="color:var(--color-gold);">Curated Protocol Bundle</span>
+          <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin:4px 0 6px;" id="routine-bundle-title">Complete 4-Step Morning Aura Ritual</h3>
+          <p style="font-size:0.88rem; color:var(--color-charcoal); margin:0;" id="routine-bundle-desc">Awaken, hydrate, protect, and illuminate with synchronized botanical bio-actives.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--color-sage); font-weight:700;">15% PRIVILEGE SAVINGS</div>
+            <div style="font-size:1.6rem; font-weight:700;" id="routine-bundle-price">$455.00</div>
+          </div>
+          <button class="btn-primary" onclick="addCurrentRoutineBundle()">
+            Add Protocol to Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Master Formulations Catalog Section -->
+  <section class="section-padding collections-section" id="collections">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">The Master Formulations</span>
+        <h2 class="section-title">High-Potency Bio-Cellular Formulations</h2>
+        <p class="section-lead">
+          Each formula is bottled in Swiss violet Miron glass to preserve sensitive botanical bio-photons against degradation, delivering unparalleled skin transformation.
+        </p>
+      </div>
+
+      <!-- Filter Tabs & Sort Controls -->
+      <div class="filter-bar-wrap">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-category="all">All Formulations</button>
+          <button class="filter-pill" data-category="serums">Cellular Serums</button>
+          <button class="filter-pill" data-category="cremes">Hydra-Crèmes</button>
+          <button class="filter-pill" data-category="elixirs">Botanical Elixirs</button>
+          <button class="filter-pill" data-category="mists">Restorative Mists</button>
+          <button class="filter-pill" data-category="parfum">Haute Parfumerie</button>
+        </div>
+
+        <div class="sort-select-wrap">
+          <label for="sort-products-select">Sort By:</label>
+          <select id="sort-products-select" class="sort-select" onchange="renderProductCards()">
+            <option value="featured">Featured Curations</option>
+            <option value="rating">Highest Clinical Rating</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="products-grid" id="products-grid-container">
+        <!-- Rendered via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalised Bottle Engraving Studio -->
+  <section class="section-padding engraving-section" id="engraving">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Haute Personnalisation</span>
+        <h2 class="section-title">The Bottle Engraving Atelier</h2>
+        <p class="section-lead">
+          Elevate your daily ritual with complimentary bespoke gold-foil bottle engraving. Render your initials or personal monogram live in real-time.
+        </p>
+      </div>
+
+      <div class="engraving-studio-grid">
+        <!-- Live Bottle Render Stage -->
+        <div class="engraving-bottle-stage">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85" alt="Engraved Bottle" class="engraving-bottle-img" id="engraving-preview-bottle" />
+          <div class="engraving-live-plaque">
+            <div class="engraving-live-text" id="engraving-preview-text">MADAME ROSTOVA</div>
+          </div>
+        </div>
+
+        <!-- Engraving Controls -->
+        <div class="engraving-controls-card">
+          <span class="tracking-widest-luxury" style="color:var(--color-gold);">Maison Calligraphy Service</span>
+          <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin:6px 0 12px;">Customize Your Flacon</h3>
+          <p style="font-size:0.88rem; color:var(--color-charcoal); line-height:1.6; margin-bottom:1.5rem;">
+            Select your formulation and enter up to 16 characters for precision laser-etched metallic foil inlay, executed by our master artisans in Geneva.
+          </p>
+
+          <label style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; color:var(--color-muted); display:block; margin-bottom:6px;">Select Flacon:</label>
+          <select id="engraving-product-select" class="promo-input" style="width:100%; margin-bottom:1.2rem; background:#fff;">
+            <option value="aura-parfum">Extrait de Parfum "L’Aura" (50ml) — $260</option>
+            <option value="elixir-cellulaire">L’Élixir Cellulaire Doré (30ml) — $185</option>
+            <option value="creme-velours">Crème Velours Suprême (50ml) — $220</option>
+          </select>
+
+          <label style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; color:var(--color-muted); display:block; margin-bottom:6px;">Engraving Inscription (Max 16 chars):</label>
+          <input type="text" id="engraving-input-text" class="promo-input" placeholder="e.g. ELENA ROSTOVA or C.A." maxlength="16" oninput="updateLiveEngraving(this.value)" style="width:100%; margin-bottom:1.2rem;" />
+
+          <label style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; color:var(--color-muted); display:block; margin-bottom:6px;">Metallic Inlay Finish:</label>
+          <div class="engraving-foil-selectors">
+            <button class="foil-btn active" onclick="setFoilStyle('gold', this)">
+              <span class="foil-dot gold"></span>
+              <span>Imperial Gold Foil</span>
+            </button>
+            <button class="foil-btn" onclick="setFoilStyle('platinum', this)">
+              <span class="foil-dot platinum"></span>
+              <span>Platinum Silver</span>
+            </button>
+            <button class="foil-btn" onclick="setFoilStyle('rose-gold', this)">
+              <span class="foil-dot rose-gold"></span>
+              <span>Celestial Rose</span>
+            </button>
+          </div>
+
+          <button class="btn-primary" style="width:100%;" onclick="addEngravedBottleToCart()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Add Custom Engraved Flacon to Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Olfactory Compass & Sillage Radar -->
+  <section class="section-padding olfactory-section" id="olfactory">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Haute Parfumerie Artisanale</span>
+        <h2 class="section-title">The 16-Hour Olfactory Sillage Compass</h2>
+        <p class="section-lead">
+          Experience the chromatic evolution of "L’Aura" across a full day of wear. Click the timeline intervals to inspect projection radius and note diffusion.
+        </p>
+      </div>
+
+      <div class="olfactory-grid">
+        <!-- Interactive Radar Stage -->
+        <div class="sillage-radar-stage">
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=400&q=85" alt="Extrait de Parfum L'Aura" class="radar-center-bottle" />
+        </div>
+
+        <!-- Timeline Details & Controls -->
+        <div>
+          <div class="olfactory-timeline-buttons">
+            <button class="olfactory-time-btn active" onclick="selectOlfactoryHour('hour1', this)">Hour 0 – 2 (Top)</button>
+            <button class="olfactory-time-btn" onclick="selectOlfactoryHour('hour4', this)">Hour 2 – 8 (Heart)</button>
+            <button class="olfactory-time-btn" onclick="selectOlfactoryHour('hour16', this)">Hour 8 – 16+ (Base)</button>
+          </div>
+
+          <div style="background:#fff; border:1px solid rgba(197,160,89,0.3); border-radius:var(--radius-md); padding:28px; box-shadow:var(--shadow-prestige);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span class="tracking-widest-luxury" style="color:var(--color-gold);" id="olfactory-timespan">Hour 0 – Hour 2</span>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--color-sage); font-weight:700;" id="olfactory-sillage-val">2.5 Meters (High Projection)</span>
+            </div>
+            <h3 style="font-family:var(--font-serif); font-size:1.6rem; margin-bottom:8px;" id="olfactory-phase-title">Top Notes: Immediate Luminous Radiance</h3>
+            
+            <div style="font-size:0.92rem; font-weight:600; color:var(--color-gold-hover); margin-bottom:12px;" id="olfactory-notes-val">
+              Italian Bergamot, Candied Pink Peppercorn &amp; Angelica Root
+            </div>
+
+            <p style="font-size:0.88rem; color:var(--color-charcoal); line-height:1.65; margin-bottom:1.5rem;" id="olfactory-action-desc">
+              Crystalline citrus oils burst upon pulse-point warmth, providing a vibrant, invigorating solar opening.
+            </p>
+
+            <button class="btn-primary" onclick="AppState.addToCart('aura-parfum', 1)">
+              Acquire Extrait de Parfum ($260)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Cellular Science Section -->
+  <section class="section-padding science-section" id="science">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow" style="color:var(--color-gold-light);">The Science of Longevity</span>
+        <h2 class="section-title" style="color:#fff;">Three Pillars of Cellular Efficacy</h2>
+        <p class="section-lead">
+          CAYRYS rejects conventional cosmetic fillers. Every drop is saturated with active phyto-nutrients, Swiss cryo-botanicals, and cellular energy catalysts.
+        </p>
+      </div>
+
+      <!-- Science 3 Pillars -->
+      <div class="science-grid">
+        <div class="science-card">
+          <div class="science-number">01</div>
+          <h3 class="science-card-title">Alpine Cryo-Extraction</h3>
+          <p class="science-card-text">
+            Botanicals are flash-frozen at -40°C on Swiss mountain peaks within two hours of hand-harvesting. This preserves delicate cellular membranes and living enzymes without heat damage.
+          </p>
+        </div>
+
+        <div class="science-card">
+          <div class="science-number">02</div>
+          <h3 class="science-card-title">24K Bio-Gold Peptides</h3>
+          <p class="science-card-text">
+            Colloidal gold nanospheres act as biocompatible micro-shuttles, binding to signaling tetrapeptides to traverse the stratum corneum and stimulate cellular ATP synthesis at the dermal base.
+          </p>
+        </div>
+
+        <div class="science-card">
+          <div class="science-number">03</div>
+          <h3 class="science-card-title">Circadian Epigenetics</h3>
+          <p class="science-card-text">
+            Our dual morning/evening formulations synchronize with your natural 24-hour cellular clock: shielding against UV and oxidative stress by day, fueling DNA repair and lipid synthesis by night.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 3D Molecular Biology Studio -->
+  <section class="section-padding molecular-section" id="molecular">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Interactive 3D Biophysics</span>
+        <h2 class="section-title">The Cellular Penetration Matrix</h2>
+        <p class="section-lead">
+          Drag to rotate the 3D bio-cellular matrix. Inspect how our colloidal 24K bio-gold shuttles deliver multi-peptides past the stratum corneum into the deep basal dermis.
+        </p>
+      </div>
+
+      <div class="molecular-grid">
+        <!-- 3D Interactive Canvas -->
+        <div class="molecular-canvas-wrap">
+          <canvas id="molecular-canvas"></canvas>
+          <div class="canvas-hint-pill">✦ Drag to Rotate in 3D • Interactive Biophysics</div>
+        </div>
+
+        <!-- Dermal Depth Selector -->
+        <div>
+          <span class="tracking-widest-luxury" style="color:var(--color-gold);">Multi-Depth Cellular Delivery</span>
+          <h3 style="font-family:var(--font-serif); font-size:2rem; margin:6px 0 12px;">Dermal Absorption Spectrum</h3>
+          <p style="font-size:0.9rem; color:var(--color-charcoal); line-height:1.65; margin-bottom:1.5rem;">
+            Traditional cosmetic creams remain stalled on the stratum corneum. CAYRYS bio-conjugates peptides to colloidal gold nanospheres, penetrating 4.2x deeper to trigger authentic mitochondrial renewal.
+          </p>
+
+          <div class="dermal-depth-selector">
+            <div class="dermal-depth-item active" onclick="selectDermalLayer(1, this)">
+              <div class="dermal-header-row">
+                <span class="dermal-layer-title">Layer 01: Stratum Corneum</span>
+                <span class="dermal-depth-microns">0 – 15 µm</span>
+              </div>
+              <p class="dermal-layer-action">High-MW Hyaluronate (1,500 kDa) &amp; Plant Squalane seal moisture and shield against pollution.</p>
+            </div>
+
+            <div class="dermal-depth-item" onclick="selectDermalLayer(2, this)">
+              <div class="dermal-header-row">
+                <span class="dermal-layer-title">Layer 02: Stratum Spinosum</span>
+                <span class="dermal-depth-microns">15 – 50 µm</span>
+              </div>
+              <p class="dermal-layer-action">Fermented Marine Glycoproteins &amp; Grasse May Rose hydrosol replenish intercellular lipid cement.</p>
+            </div>
+
+            <div class="dermal-depth-item" onclick="selectDermalLayer(3, this)">
+              <div class="dermal-header-row">
+                <span class="dermal-layer-title">Layer 03: Basal Matrix &amp; Dermis</span>
+                <span class="dermal-depth-microns">50 – 120 µm</span>
+              </div>
+              <p class="dermal-layer-action">24K Bio-Gold Nanospheres &amp; Swiss Edelweiss Stem Cells stimulate fibroblast pro-collagen synthesis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Proof of Efficacy (Before & After Split Slider) -->
+  <section class="section-padding efficacy-section" id="efficacy">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Dermatologically Certified</span>
+        <h2 class="section-title">28-Day Clinical Transformation</h2>
+        <p class="section-lead">
+          Drag the interactive slider to inspect high-resolution epidermal revitalization after 28 days of the CAYRYS Cellular Protocol.
+        </p>
+      </div>
+
+      <div class="slider-container-card">
+        <!-- Interactive Split Stage -->
+        <div class="split-image-stage" id="before-after-container">
+          <!-- Before Layer (Day 0) -->
+          <div class="split-img-layer before">
+            <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1200&q=85" alt="Day 0 Pre-Treatment" />
+            <span class="split-label-chip label-before">Day 0: Baseline</span>
+          </div>
+
+          <!-- After Layer (Day 28) -->
+          <div class="split-img-layer after" id="after-img-layer">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85" alt="Day 28 Cellular Radiance" />
+            <span class="split-label-chip label-after">Day 28: Cellular Radiance</span>
+          </div>
+
+          <!-- Slider Brass Handle -->
+          <div class="slider-handle-line" id="slider-handle">
+            <div class="slider-handle-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(6,0)"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinical Details Content -->
+        <div class="efficacy-info-content">
+          <div class="clinical-badge-row">
+            <span class="clinical-badge">Double-Blind Clinical Trial</span>
+            <span class="clinical-badge">n = 64 Participants</span>
+          </div>
+
+          <h3 class="efficacy-title">Statistically Proven Epidermal Renewal</h3>
+          <p class="efficacy-desc">
+            Conducted by an independent Swiss dermatological laboratory under strict double-blind clinical protocol. Measurements taken using 3D profilometry and high-frequency ultrasound.
+          </p>
+
+          <div class="efficacy-stats-list">
+            <div class="efficacy-stat-row">
+              <span class="stat-circle-highlight">+48%</span>
+              <div class="stat-detail-text">
+                <h5>Pro-Collagen I &amp; III Synthesis</h5>
+                <p>Clinically measured increase in deep dermal density and elastic recovery.</p>
+              </div>
+            </div>
+
+            <div class="efficacy-stat-row">
+              <span class="stat-circle-highlight">-37%</span>
+              <div class="stat-detail-text">
+                <h5>Reduction in Depth of Micro-Grooves</h5>
+                <p>Visible smoothing across periorbital expression lines and nasolabial folds.</p>
+              </div>
+            </div>
+
+            <div class="efficacy-stat-row">
+              <span class="stat-circle-highlight">+94%</span>
+              <div class="stat-detail-text">
+                <h5>Continuous Moisture Barrier Lock</h5>
+                <p>Sustained transepidermal hydration retention measured at 72 hours post-application.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Client Accolades Section with Dynamic Reviews -->
+  <section class="section-padding reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">Client Voices</span>
+        <h2 class="section-title">Echoes of Transformed Radiance</h2>
+        <p class="section-lead">
+          Verified accounts from patrons worldwide who have welcomed CAYRYS into their daily beauty sanctuaries.
+        </p>
+        <div style="margin-top:1.5rem;">
+          <button class="btn-primary" onclick="openReviewModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Share Your Experience
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews-grid" id="reviews-dynamic-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Press Quotes Strip -->
+  <aside class="press-strip" aria-label="Press Accolades">
+    <div class="press-track">
+      <div class="press-quote-item">
+        <span class="press-logo">VOGUE</span>
+        <span class="press-text">“The holy grail of alpine cellular rejuvenation. Pure couture for your skin.”</span>
+      </div>
+      <div class="press-quote-item">
+        <span class="press-logo">ELLE</span>
+        <span class="press-text">“French poetic harvest meets Swiss bio-cellular rigor in the chicest bottle imaginable.”</span>
+      </div>
+      <div class="press-quote-item">
+        <span class="press-logo">HARPER’S BAZAAR</span>
+        <span class="press-text">“The single most luminous skincare innovation to emerge from Europe this decade.”</span>
+      </div>
+      <div class="press-quote-item">
+        <span class="press-logo">VANITY FAIR</span>
+        <span class="press-text">“A sensory triumph. CAYRYS sets a new gold standard in clean luxury beauty.”</span>
+      </div>
+      <!-- Duplicate for marquee -->
+      <div class="press-quote-item">
+        <span class="press-logo">VOGUE</span>
+        <span class="press-text">“The holy grail of alpine cellular rejuvenation. Pure couture for your skin.”</span>
+      </div>
+      <div class="press-quote-item">
+        <span class="press-logo">ELLE</span>
+        <span class="press-text">“French poetic harvest meets Swiss bio-cellular rigor in the chicest bottle imaginable.”</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- The Editorial Gazette Section -->
+  <section class="section-padding journal-section" id="journal">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-eyebrow">The CAYRYS Gazette</span>
+        <h2 class="section-title">Chronicles of Botanical Craft</h2>
+        <p class="section-lead">
+          Explore botanical foraging essays, cellular biology journals, and behind-the-scenes dispatches from our laboratories in Grasse and Geneva.
+        </p>
+      </div>
+
+      <div class="journal-grid">
+        <article class="journal-card" onclick="showToast('Reading: The 3,000-Meter Bloom')">
+          <div class="journal-img-wrap">
+            <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=85" alt="Alpine harvest" />
+          </div>
+          <div class="journal-meta">
+            <span class="tag">Cellular Biology</span>
+            <span>•</span>
+            <span>5 Min Read</span>
+          </div>
+          <h3 class="journal-title">The 3,000-Meter Bloom: How Alpine Edelweiss Defies Extreme Ultraviolet Radiation</h3>
+          <p class="journal-excerpt">
+            At high altitudes, plants face extreme cold and intense sunlight. Discover how leontopodic acids neutralize free radicals with peerless efficacy.
+          </p>
+          <span class="read-more-link">
+            <span>Read Chronicle</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+
+        <article class="journal-card" onclick="showToast('Reading: Dawn in Grasse')">
+          <div class="journal-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=85" alt="Rose harvest Grasse" />
+          </div>
+          <div class="journal-meta">
+            <span class="tag">Harvest Heritage</span>
+            <span>•</span>
+            <span>7 Min Read</span>
+          </div>
+          <h3 class="journal-title">Dawn in Grasse: Plucking The Heirloom May Rose While The Morning Dew Lingers</h3>
+          <p class="journal-excerpt">
+            A fragrant voyage into the family-owned fields of Provence, where heirloom Centifolia petals must be harvested before the sun evaporates their golden oil.
+          </p>
+          <span class="read-more-link">
+            <span>Read Chronicle</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+
+        <article class="journal-card" onclick="showToast('Reading: The Circadian Matrix')">
+          <div class="journal-img-wrap">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85" alt="Nocturnal skin renewal" />
+          </div>
+          <div class="journal-meta">
+            <span class="tag">Skin Longevity</span>
+            <span>•</span>
+            <span>4 Min Read</span>
+          </div>
+          <h3 class="journal-title">The Circadian Matrix: Why Cellular Mitosis Accelerates Between 11 PM and 3 AM</h3>
+          <p class="journal-excerpt">
+            Understanding skin chronobiology unlocks unprecedented anti-aging results. Here is how our lipid elixirs optimize deep nocturnal mitochondrial repair.
+          </p>
+          <span class="read-more-link">
+            <span>Read Chronicle</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-Out Luxury Bag (Cart Drawer) -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Bag">
+    <div class="cart-header">
+      <h3 class="cart-header-title">Your Luxury Bag</h3>
+      <button class="icon-btn" onclick="closeCartDrawer()" aria-label="Close Bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Tier Meter -->
+    <div class="cart-free-shipping-bar">
+      <div class="shipping-progress-text" id="shipping-status-text">
+        Add $150 for complimentary white-glove shipping!
+      </div>
+      <div class="shipping-meter-wrap">
+        <div class="shipping-meter-fill" id="shipping-meter-fill"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div class="cart-items-container" id="cart-items-list">
+      <!-- Items dynamically populated by app.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-empty-message" id="cart-empty-state">
+      <div class="cart-empty-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </div>
+      <p style="font-family:var(--font-serif); font-size:1.3rem; margin-bottom:6px;">Your sanctuary bag is empty.</p>
+      <p style="font-size:0.84rem;">Explore our formulations to begin your cellular ritual.</p>
+    </div>
+
+    <!-- Complimentary Sample Selector -->
+    <div class="cart-samples-section">
+      <div class="cart-samples-title">Choose Complimentary Deluxe Sample:</div>
+      <div class="sample-pills-row">
+        <button class="sample-chip selected" onclick="selectSample('Damask Rose Elixir 5ml', this)">Damask Rose 5ml</button>
+        <button class="sample-chip" onclick="selectSample('Crème Velours 7ml', this)">Crème Velours 7ml</button>
+        <button class="sample-chip" onclick="selectSample('Blue Tansy Nectar 5ml', this)">Blue Tansy 5ml</button>
+      </div>
+    </div>
+
+    <!-- Complimentary Velvet Gift Packaging -->
+    <div style="padding: 12px 28px; background: var(--color-porcelain); border-bottom: 1px solid var(--color-sandstone); display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.1rem;">🎁</span>
+        <div>
+          <div style="font-size: 0.78rem; font-weight: 700; color: var(--color-obsidian);">Maison Velvet Gift Box</div>
+          <div style="font-size: 0.72rem; color: var(--color-muted);">Gold wax seal &amp; hand-written calligraphy card</div>
+        </div>
+      </div>
+      <label style="position: relative; display: inline-block; width: 38px; height: 22px;">
+        <input type="checkbox" id="gift-packaging-toggle" onchange="toggleGiftPackaging(this.checked)" style="opacity: 0; width: 0; height: 0;" />
+        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--color-sandstone); transition: .3s; border-radius: 34px;" id="gift-toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-footer">
+      <div class="promo-input-row">
+        <input type="text" id="promo-code-input" class="promo-input" placeholder="Invitation Code (e.g. LUXE15)" />
+        <button class="promo-btn" onclick="applyPromoCode()">Apply</button>
+      </div>
+
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+
+      <button class="btn-whatsapp" style="margin-bottom:10px;" onclick="openCheckoutModal()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Order &amp; Verify via WhatsApp
+      </button>
+
+      <button class="btn-secondary" style="width:100%; font-size:0.78rem; padding:12px;" onclick="openCheckoutModal()">
+        Standard Express Dispatch
+      </button>
+
+      <div style="text-align:center; margin-top:12px; font-size:0.72rem; color:var(--color-muted);">
+        🔒 256-Bit Encrypted • Complimentary Returns within 30 Days
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quickview-modal" onclick="if(event.target===this) closeQuickView()">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close Modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="quickview-grid" id="quickview-dynamic-content"></div>
+    </div>
+  </div>
+
+  <!-- Search Full-Screen Modal -->
+  <div class="search-modal" id="search-modal">
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="icon-btn" onclick="closeSearchModal()" aria-label="Close Search">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="search-input-wrap">
+      <input type="text" id="search-main-input" class="search-main-input" placeholder="Search formulations, ingredients, or rituals..." oninput="handleSearchInput(this.value)" />
+    </div>
+
+    <div class="search-suggestions-tags">
+      <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:4px;">Trending:</span>
+      <button class="search-tag" onclick="document.getElementById('search-main-input').value='Gold'; handleSearchInput('Gold');">24K Bio-Gold</button>
+      <button class="search-tag" onclick="document.getElementById('search-main-input').value='Rose'; handleSearchInput('Rose');">Damask Rose</button>
+      <button class="search-tag" onclick="document.getElementById('search-main-input').value='Serum'; handleSearchInput('Serum');">Cellular Serum</button>
+      <button class="search-tag" onclick="document.getElementById('search-main-input').value='Edelweiss'; handleSearchInput('Edelweiss');">Edelweiss Stem Cells</button>
+    </div>
+
+    <div class="search-results-list" id="search-results-list"></div>
+  </div>
+
+  <!-- Mock Checkout Modal -->
+  <div class="modal-overlay" id="checkout-modal" onclick="if(event.target===this) closeCheckoutModal()">
+    <div class="modal-content-box" style="max-width:650px; padding:36px;">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close Checkout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="text-align:center; margin-bottom:1.8rem;">
+        <img src="assets/crest-transparent.png" alt="CAYRYS Crest" style="height:44px; margin:0 auto 10px;" />
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem;">White-Glove Courier Dispatch</h3>
+        <p style="font-size:0.84rem; color:var(--color-muted);">Formulations bottled and sealed fresh in Geneva &amp; Grasse.</p>
+      </div>
+
+      <div id="checkout-order-summary"></div>
+
+      <form id="checkout-form" onsubmit="submitOrderToWhatsApp(event)">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+          <input type="text" placeholder="First Name" required class="promo-input" value="Elena" />
+          <input type="text" placeholder="Last Name" required class="promo-input" value="Rostova" />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+          <input type="tel" id="checkout-phone-input" placeholder="WhatsApp Mobile Number" required class="promo-input" value="+91 98765 43210" />
+          <input type="email" placeholder="Email for Dispatch" required class="promo-input" value="elena@paris.com" />
+        </div>
+        <input type="text" placeholder="Shipping Address" required class="promo-input" style="width:100%; margin-bottom:12px;" value="14 Rue du Faubourg Saint-Honoré" />
+        <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+          <input type="text" placeholder="City" required class="promo-input" value="Paris" />
+          <input type="text" placeholder="Postal Code" required class="promo-input" value="75008" />
+          <input type="text" placeholder="Country" required class="promo-input" value="France" />
+        </div>
+        <input type="text" id="checkout-notes-input" placeholder="Special Delivery Notes or Custom Bottle Engraving (Optional)" class="promo-input" style="width:100%; margin-bottom:1.4rem;" />
+
+        <button type="submit" class="btn-whatsapp" style="font-size:0.92rem; padding:16px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Send Order to WhatsApp &amp; Request Payment
+        </button>
+        <div style="text-align:center; margin-top:10px; font-size:0.75rem; color:var(--color-muted);">
+          📲 Your order list will be verified by our team on WhatsApp before payment options are provided.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- WhatsApp Order Confirmation Modal -->
+  <div class="modal-overlay" id="whatsapp-confirmed-modal" onclick="if(event.target===this) closeWhatsAppConfirmationModal()">
+    <div class="modal-content-box" style="max-width:580px; padding:36px;">
+      <button class="modal-close-btn" onclick="closeWhatsAppConfirmationModal()" aria-label="Close Confirmation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="whatsapp-confirmed-content"></div>
+    </div>
+  </div>
+
+  <!-- Luxury Receipt / Confirmation Modal -->
+  <div class="modal-overlay" id="receipt-modal" onclick="if(event.target===this) closeReceiptModal()">
+    <div class="modal-content-box" style="max-width:580px; padding:36px;">
+      <div id="receipt-content"></div>
+    </div>
+  </div>
+
+  <!-- Review Submission Modal -->
+  <div class="modal-overlay" id="review-submit-modal" onclick="if(event.target===this) closeReviewModal()">
+    <div class="modal-content-box" style="max-width:600px; padding:36px;">
+      <button class="modal-close-btn" onclick="closeReviewModal()" aria-label="Close Review Form">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <span class="tracking-widest-luxury" style="color:var(--color-gold);">Patron Accolades</span>
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin:4px 0;">Share Your Skin Journey</h3>
+        <p style="font-size:0.84rem; color:var(--color-muted);">Contribute your verified experience to the Maison records.</p>
+      </div>
+
+      <form id="review-submit-form" onsubmit="handleReviewFormSubmit(event)">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+          <input type="text" id="rev-input-name" placeholder="Your Name" required class="promo-input" />
+          <input type="text" id="rev-input-location" placeholder="City, Country" required class="promo-input" />
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+          <select id="rev-input-product" class="promo-input" style="background:#fff;">
+            <option value="L’Élixir Cellulaire Doré">L’Élixir Cellulaire Doré</option>
+            <option value="Crème Velours Suprême">Crème Velours Suprême</option>
+            <option value="Nectar Botanique Nocturne">Nectar Botanique Nocturne</option>
+            <option value="Brume Céleste aux 7 Roses">Brume Céleste</option>
+            <option value="Extrait de Parfum L’Aura">Extrait de Parfum "L’Aura"</option>
+          </select>
+          <select id="rev-input-skintype" class="promo-input" style="background:#fff;">
+            <option value="Sensitive &amp; Dry">Sensitive &amp; Dry</option>
+            <option value="Combination">Combination</option>
+            <option value="Mature Skin">Mature Skin</option>
+            <option value="Normal">Normal</option>
+          </select>
+          <select id="rev-input-rating" class="promo-input" style="background:#fff;">
+            <option value="5">★★★★★ (5 Stars)</option>
+            <option value="4">★★★★☆ (4 Stars)</option>
+          </select>
+        </div>
+
+        <input type="text" id="rev-input-quote" placeholder="Headline / Quote (e.g. Liquid alchemy for radiant bounce)" required class="promo-input" style="width:100%; margin-bottom:12px;" />
+        <textarea id="rev-input-body" placeholder="Describe your skin’s transformation, sensory texture feel, and visible results..." required class="promo-input" style="width:100%; height:90px; border-radius:var(--radius-sm); margin-bottom:1.5rem;"></textarea>
+
+        <button type="submit" class="btn-primary" style="width:100%;">
+          Publish Verified Review
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIP Member Portal Modal -->
+  <div class="modal-overlay" id="member-portal-modal" onclick="if(event.target===this) closeMemberModal()">
+    <div class="modal-content-box" style="max-width:560px; padding:36px;">
+      <button class="modal-close-btn" onclick="closeMemberModal()" aria-label="Close Member Portal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <img src="assets/crest-transparent.png" alt="CAYRYS Crest" style="height:44px; margin:0 auto 8px;" />
+        <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin:0;">Maison CAYRYS Inner Circle</h3>
+        <span class="tracking-widest-luxury" style="color:var(--color-gold);">L’Alchimiste Privilège Member</span>
+      </div>
+
+      <div style="background:var(--color-porcelain); padding:20px; border-radius:var(--radius-sm); margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span>Patron Name:</span>
+          <strong>Elena Rostova</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span>Privilege Loyalty Tier:</span>
+          <span style="color:var(--color-gold-hover); font-weight:700;">Gold Ambassador</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span>Accumulated Points:</span>
+          <strong>850 Points ($40 Value)</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; border-top:1px dashed var(--color-sandstone); padding-top:8px;">
+          <span>Preferred Protocol:</span>
+          <span>The Royal Cellular Longevity Ritual</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px;">
+        <button class="btn-primary" style="flex-grow:1;" onclick="showToast('VIP Privilege Code applied: LUXE15'); closeMemberModal();">
+          Redeem $40 Voucher
+        </button>
+        <button class="btn-secondary" onclick="closeMemberModal()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Virtual AI Beauty Concierge -->
+  <button class="concierge-floating-trigger" onclick="toggleConcierge()" aria-label="Open CAYRYS Concierge">
+    <div class="concierge-trigger-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <span class="concierge-trigger-text">Consultant CAYRYS</span>
+  </button>
+
+  <div class="concierge-drawer-overlay" id="concierge-overlay" onclick="toggleConcierge()"></div>
+  <aside class="concierge-drawer" id="concierge-drawer">
+    <div class="concierge-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="assets/crest-transparent.png" alt="CAYRYS Crest" style="height:26px;" />
+        <div>
+          <h4 style="font-family:var(--font-serif); font-size:1.15rem; line-height:1.1;">Maison CAYRYS Concierge</h4>
+          <span style="font-size:0.72rem; color:var(--color-gold-light);">Bio-Cellular Formulation Advisor</span>
+        </div>
+      </div>
+      <button class="icon-btn" onclick="toggleConcierge()" style="color:#fff;" aria-label="Close Concierge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="concierge-chat-body" id="concierge-chat-body">
+      <div class="chat-bubble bot">
+        Greetings. I am your CAYRYS Bio-Cellular Beauty Advisor. How may I assist your skin ritual today?
+        <div class="concierge-faq-pills">
+          <button class="concierge-faq-btn" onclick="sendConciergeQuery('Which formulation is ideal for soothing redness &amp; sensitivity?')">✦ Which formulation is ideal for redness &amp; sensitivity?</button>
+          <button class="concierge-faq-btn" onclick="sendConciergeQuery('How should I layer the 24K Gold Serum with the Crème Velours?')">✦ How should I layer the 24K Gold Serum with the Crème?</button>
+          <button class="concierge-faq-btn" onclick="sendConciergeQuery('What makes Swiss Alpine Edelweiss stem cells so effective?')">✦ What makes Swiss Alpine Edelweiss so potent?</button>
+          <button class="concierge-faq-btn" onclick="sendConciergeQuery('Can you explain the complimentary global shipping &amp; delivery?')">✦ Delivery and white-glove shipping policies</button>
+        </div>
+      </div>
+    </div>
+
+    <form class="concierge-input-row" onsubmit="handleConciergeSubmit(event)">
+      <input type="text" id="concierge-text-input" class="concierge-input" placeholder="Ask about formulations, ingredients, or rituals..." autocomplete="off" />
+      <button type="submit" class="icon-btn" style="background:var(--color-obsidian); color:#fff; border-radius:50%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </aside>
+
+  <!-- Toast Notification Anchor -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="heritage">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <img src="assets/crest-transparent.png" alt="CAYRYS" class="footer-brand-crest" />
+          <p class="footer-brand-motto">
+            Maison CAYRYS is dedicated to slow botanical alchemy, cellular longevity biotechnology, and peerless sensorial beauty. Hand-crafted in Grasse and Geneva.
+          </p>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--color-gold-light); letter-spacing:0.1em;">
+            PARIS • GENÈVE • LONDON • TOKYO
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Collections</h4>
+          <ul class="footer-links-list">
+            <li><a href="#collections" class="footer-link">Cellular Serums</a></li>
+            <li><a href="#collections" class="footer-link">Obsidian Crèmes</a></li>
+            <li><a href="#collections" class="footer-link">Botanical Elixirs</a></li>
+            <li><a href="#collections" class="footer-link">Celestial Mists</a></li>
+            <li><a href="#collections" class="footer-link">Haute Parfumerie</a></li>
+            <li><a href="#routine" class="footer-link">AM / PM Protocols</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">The Maison</h4>
+          <ul class="footer-links-list">
+            <li><a href="#science" class="footer-link">Cellular Biology Lab</a></li>
+            <li><a href="#efficacy" class="footer-link">Clinical Evidence</a></li>
+            <li><a href="#journal" class="footer-link">The Gazette Journal</a></li>
+            <li><a href="#heritage" class="footer-link">Violet Glass Sustainability</a></li>
+            <li><a href="#heritage" class="footer-link">Bespoke Concierge</a></li>
+            <li><a href="javascript:void(0)" onclick="promptChangeWhatsAppNumber()" class="footer-link" style="color:var(--color-gold);">⚙️ Store Owner: Set WhatsApp Number</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">The Inner Circle</h4>
+          <p style="font-size:0.84rem; color:rgba(253,251,247,0.7); line-height:1.6; margin-bottom:1.2rem;">
+            Receive invitations to private seasonal botanical harvests, preview limited parfum extraits, and receive your 15% inaugural gift code.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your email" required class="newsletter-input" />
+              <button type="submit" class="newsletter-btn">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-badges-row">
+        <div class="sustainability-badges">
+          <span>🌿 100% Bio-Active Botanicals</span>
+          <span>💎 Miron Violet Protective Glass</span>
+          <span>🐰 Leaping Bunny Cruelty-Free</span>
+          <span>🌱 ECOCERT Certified Organic</span>
+        </div>
+
+        <div style="font-size:0.76rem; color:var(--color-gold-light);">
+          B-Corp Certified • Carbon-Neutral Cold Transport
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 CAYRYS Haute Botanique &amp; Cellular Radiance. All Rights Reserved.</div>
+        <div style="display:flex; gap:1.4rem;">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Conscious Sourcing</a>
+          <a href="#" class="footer-link">Dermatological Certifications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

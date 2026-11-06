@@ -1,0 +1,21 @@
+{
+  "name": "cayrys-luxury-beauty",
+  "version": "1.1.0",
+  "description": "CAYRYS Haute Botanique & Cellular Radiance - Full-Stack Dynamic Luxury Beauty & Skincare Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "beauty",
+    "skincare",
+    "luxury",
+    "awwwards",
+    "e-commerce",
+    "rest-api",
+    "cayrys"
+  ],
+  "author": "CAYRYS Haute Botanique",
+  "license": "MIT"
+}
